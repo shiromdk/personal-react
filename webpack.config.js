@@ -3,7 +3,7 @@ var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const VENDOR_LIBS =[
-    'react','react-dom','react-redux','react-dom','redux','redux-form','redux-thunk','lodash'
+    'react','react-redux','react-dom','redux','redux-form','redux-thunk','lodash'
 ];
 
 module.exports = {
@@ -12,7 +12,7 @@ module.exports = {
     vendor: VENDOR_LIBS
   },
   output: {
-    path: path.join(__dirname, 'build'),
+    path: path.join(__dirname, 'dist'),
     filename: '[name].[chunkhash].js'
   },
   module:{
@@ -32,8 +32,9 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin({
       names: ['vendor','manifest']
     }),
-      new HtmlWebpackPlugin({
+    new HtmlWebpackPlugin({
         template:'src/index.html'
-      })
+    })
+    //new webpack.optimize.UglifyJsPlugin()
   ]
 };

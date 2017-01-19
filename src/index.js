@@ -7,12 +7,13 @@ import ReduxThunk from 'redux-thunk';
 import reducers from './reducers';
 import Routes from './router';
 
+
 const App = () => {
     const store = createStore(reducers,{},applyMiddleware(ReduxThunk));
     return(
         <Provider store={store}>
             <Routes />
-        </Provider>    
+        </Provider>
         );
 };
 

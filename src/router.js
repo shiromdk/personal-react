@@ -1,16 +1,14 @@
 import React from 'react';
-import { Router, Route, IndexRoute } from 'react-router';
+import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
-const Home = () =>{
-    return (
-        <div>Hello World</div>
-    );
-}
+import Main from './components/main';
 
 const Routes = () => {
     return(
-        <Route path="/" component={Home}>
+      <Router history={browserHistory}>
+        <Route path="/" component={Main}>
         </Route>
+      </Router>
     );
 };
 
