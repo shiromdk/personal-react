@@ -8,7 +8,7 @@ export default class Main extends Component{
       <div className="container">
         <Header />
         <MainNavigation />
-      <div>Welcome to my Website</div>
+      <div>About Test</div>
     </div>
     );
   }
